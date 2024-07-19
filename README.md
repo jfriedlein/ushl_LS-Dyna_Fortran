@@ -6,3 +6,10 @@ Focus here is on 2D elements for plane strain and axisymmetry, not on actual she
 ## Generalised interface for use of separate element subroutines for 2D plane strain and axisymmetry
 If you use a separate subroutine for the element formulation or e.g. AceGen to generate the element routine, I can recommend the general interface stated in "ushl_e101_generalInterface.f".
 
+## Numerical examples
+The folder "numericalExamples_LS-Dyna" contains examples to test user-shell elements for plane strain and axisymmetry.
+The folder "userLoading_LS-Dyna" contains the modified subroutine loadud to apply constant pressure on an edge of a shell element to enable plane strain or axisymmetric pressure loading of user-shell elements.
+
+
+## todo
+- function "isNan(*)" is only avaible for ifort compiler, e.g. not for pgi. Maybe use ( a /= 1 ) or ( a == NaN )?
