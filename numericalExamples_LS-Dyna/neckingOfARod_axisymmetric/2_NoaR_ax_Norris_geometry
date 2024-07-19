@@ -1,0 +1,30 @@
+mesh2d tmatrix 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000
+mesh2d createpoint 1 0.000000 0.000000
+mesh2d createpoint 2 6.350000 0.000000
+mesh2d createline 3 1 2
+mesh2d createpoint 4 0.000000 26.670000
+mesh2d createpoint 6 6.415000 26.670000
+mesh2d createline 7 4 6
+mesh2d createpoint 9 0.000000 6.667500
+mesh2d createpoint 12 6.366250 6.667500
+mesh2d createline 13 12 9
+mesh2d createline 15 12 6
+mesh2d createline 16 12 2
+mesh2d createedge 17 12 6 15
+mesh2d elemonedge 17 6
+mesh2d createline 18 9 4
+mesh2d createline 19 9 1
+mesh2d createedge 20 9 4 18
+mesh2d elemonedge 20 6
+mesh2d createedge 21 4 6 7
+mesh2d elemonedge 21 12
+mesh2d createedge 22 12 9 13
+mesh2d elemonedge 22 12
+mesh2d createedge 23 12 2 16
+mesh2d elemonedge 23 20
+mesh2d setbias 23 12 5.000000
+mesh2d createedge 24 1 2 3
+mesh2d elemonedge 24 12
+mesh2d createedge 25 9 1 19
+mesh2d elemonedge 25 20
+mesh2d setbias 25 9 5.000000
