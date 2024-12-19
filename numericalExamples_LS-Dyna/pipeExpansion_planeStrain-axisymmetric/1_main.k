@@ -10,6 +10,9 @@ $ Use "1" for both to use user-defined shell element
 $ Use "2" for both to use LS-Dyna plane strain element 13 and Mat24 for elasticity
 I secid   2
 I MID     2
+$ User-loading plane strain (0) or axisymmetric (1)
+I ULOA_AXI 0
+I ULOA_UDE 1
 $
 $ Number of quadrature points
 I NQP     4
@@ -27,8 +30,9 @@ R DENSITY    7.85e-9
 $
 *INCLUDE
 3_UEL_Q1X_ushl_2D_linElastic.inc
-3_ELFORM_planeStrain.inc
-$3_ELFORM_Axi.inc
+$3_UEL_Q1X_ushl_2Dax_linElastic.inc
+$3_ELFORM_planeStrain.inc
+3_ELFORM_Axi.inc
 $
 *CONSTRAINED_GLOBAL
 $#      tc        rc       dir         x         y         z       tol   
@@ -49,10 +53,10 @@ $#                a1                  o1
 $#      id                                                               heading
          0Apply internal pressure
 $#    ssid      lcid        sf        at  
-         1         1      -1.0       0.0
+         1         1       1.0       0.0
 *USER_LOADING
 $     LCID       PID       AXI     UNDEF
-         1         2         0         1
+         1         2 &ULOA_AXI &ULOA_UDE
 *CONTROL_ACCURACY
 $#     osu       inn    pidosu      iacc    
          0         1         0         1
